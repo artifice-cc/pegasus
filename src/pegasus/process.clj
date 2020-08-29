@@ -67,6 +67,7 @@
                        (catch Exception e
                          (do (info component)
                              (error e)
+                             (error (with-out-str (.printStackTrace e)))
                              (merge % {:input nil})))))
                    (filter :input))
                   parallelism))
